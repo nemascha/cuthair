@@ -1,0 +1,265 @@
+.wrapper {
+    display: grid;
+    grid-template-areas: "header" "content" "discount" "contacts" "map-container" "footer";
+    grid-template-rows: auto 5fr auto auto auto 1fr;
+    min-height: 100%;
+    font-family: 'SEGOE PRINT';
+    color: grey;
+}
+.header {
+    display: grid;
+    grid-area: header;
+    grid-template-areas: "icons barbershop-name-description phone-number"
+                         "header-menu header-menu header-menu";
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 1%;
+    background-color: #FADADD;
+}
+
+.icons {
+    grid-area: icons;
+    padding-left: 3%;
+}
+
+.icon-link-header {
+    text-decoration: none;
+    padding: 0 1%;
+    font-size: xx-large;
+    color: dimgrey;
+}
+
+.barbershop-name-description {
+    grid-area: barbershop-name-description;
+    text-align: center;
+    line-height: 1;
+}
+
+.barbershop-name {
+    text-decoration: none;
+    font-size: 70px;
+    font-family: "Brush Script Std";
+    color: dimgrey;
+}
+
+.description {
+    font-size: small;
+}
+
+.phone-number {
+    grid-area: phone-number;
+    text-decoration: none;
+    text-align: end;
+    padding-right: 5%;
+    color: dimgrey;
+}
+
+.header-menu {
+    grid-area: header-menu;
+    padding-top: 2%;
+    padding-bottom: 0.4%;
+}
+
+.header-menu-list {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(5, 10%);
+    grid-gap: 3%;
+    justify-content: center;
+    list-style: none;
+    text-transform:uppercase;
+    position: relative;
+    font-size: small;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.header-menu-item {
+    position: relative;
+}
+
+.services-menu-list {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    line-height: 2;
+    margin-top: 3.7%;
+    list-style: none;
+    background-color: #FADADD;
+    width: 100%;
+}
+
+.services-menu-link {
+    display: block;
+    text-decoration: none;
+    color: crimson;
+    text-transform: lowercase;
+    font-size: small;
+}
+
+.services-menu-link:hover {
+    background-color: #DDC5C8;
+    text-decoration: underline;
+}
+
+.header-menu-item:hover {
+    text-decoration: underline;
+}
+
+.services-menu:hover .services-menu-list {
+    display: block;
+}
+
+.header-menu-link {
+    text-decoration: none;
+    color: dimgrey;
+    display: block;
+}
+
+.content {
+    grid-area: content;
+    min-height: 500px;
+    position: relative;
+    padding: 10%;
+    background-color: #DDC5C8;
+}
+
+.discount {
+    display: grid;
+    grid-area: discount;
+    grid-template-rows: auto;
+    text-align: center;
+    align-items: center;
+    padding: 5% 25%;
+    min-height: 200px;
+    background-color: #FADADD;
+    justify-content: center;
+}
+
+.discount-header {
+    font-size: large;
+    color: crimson;
+}
+
+.discount-content {
+    padding-bottom: 2%;
+    line-height: 2;
+}
+
+.discount-btn {
+    height: 90%;
+    width: 30%;
+    justify-self: center;
+    background-color: #DDC5C8;
+    border: none;
+    border-radius: 8px;
+    text-transform: uppercase;
+}
+
+.online-enrollment {
+    text-decoration: none;
+    color: crimson;
+    font-family: cursive;
+}
+
+.contacts {
+    display: grid;
+    grid-area: contacts;
+    justify-content: center;
+    background-color: #DDC5C8;
+    align-items: center;
+    position: relative;
+    line-height: 2;
+    padding: 2% 0;
+    text-align: center;
+}
+
+.contacts-menu {
+    list-style: none;
+}
+
+.contacts-header {
+    color: crimson;
+}
+
+.map-container {
+    grid-area: map-container;
+    background-color: #DDC5C8;
+}
+
+.map {
+    width: 100%;
+}
+
+.footer {
+    display: grid;
+    grid-area: footer;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 15%);
+    grid-gap: 5%;
+    justify-content: center;
+    background-color: #DDC5C8;
+    bottom: 0;
+    width: 100%;
+    min-height: 15%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    line-height: 2;
+}
+
+.first-footer {
+    line-height: 1.3;
+}
+
+.footer-main-header{
+    font-size: x-large;
+    font-family: "Brush Script Std";
+    padding-bottom: 0.5%;
+}
+
+.barbershop-name-footer {
+    text-decoration: none;
+    color: grey;
+}
+
+  .icon-link-footer {
+    text-decoration: none;
+    padding: 0 1%;
+    font-size: x-large;
+    color: dimgrey;
+}
+
+.footer-header {
+    font-size: large;
+    color: crimson;
+}
+
+.barbershop-address {
+    color: dimgrey;
+}
+
+.about-us {
+    list-style: none;
+}
+
+.about-us-link {
+    text-decoration: none;
+    color: dimgrey;
+}
+
+.about-us-link:hover {
+    text-decoration: underline;
+}
+
+.services {
+    list-style: none;
+}
+
+.services-link {
+    text-decoration: none;
+    color: dimgrey;
+}
+
+.services-link:hover {
+    text-decoration: underline;
+}
