@@ -1,11 +1,21 @@
 .wrapper {
-    display: grid;
-    grid-template-areas: "header" "content" "discount" "contacts" "map-container" "footer";
-    grid-template-rows: auto 5fr auto auto auto 1fr;
     min-height: 100%;
     font-family: 'SEGOE PRINT';
     color: grey;
 }
+
+.start-wrapper {
+    display: grid;
+    grid-template-areas: "header" "content" "discount" "contacts" "map-container" "footer";
+    grid-template-rows: auto 3fr auto auto auto 1fr;
+}
+
+.contacts-wrapper {
+    display: grid;
+    grid-template-areas: "header" "contacts" "map-container" "footer";
+    grid-template-rows: auto 1fr auto 1fr;
+}
+
 .header {
     display: grid;
     grid-area: header;
@@ -17,12 +27,12 @@
     background-color: #FADADD;
 }
 
-.icons {
+.social {
     grid-area: icons;
     padding-left: 3%;
 }
 
-.icon-link-header {
+.social-link-header {
     text-decoration: none;
     padding: 0 1%;
     font-size: xx-large;
@@ -57,7 +67,6 @@
 .header-menu {
     grid-area: header-menu;
     padding-top: 2%;
-    padding-bottom: 0.4%;
 }
 
 .header-menu-list {
@@ -76,34 +85,50 @@
 
 .header-menu-item {
     position: relative;
+    padding: 6% 0;
+    display: inline-block;
+}
+
+.header-menu-item:hover {
+    background-color: #BCB3B8;
+}
+
+.services-menu {
+    display: inline-block;
 }
 
 .services-menu-list {
     display: none;
     position: absolute;
     z-index: 2;
-    line-height: 2;
-    margin-top: 3.7%;
+    line-height: 1;
     list-style: none;
-    background-color: #FADADD;
+    background-color: rgb(206, 169, 180);
     width: 100%;
+    border-radius: 0 0 5px 5px;
+    margin-top: 6%;
+    padding: 4% 0;
+}
+
+.services-menu-item {
+    padding: 2% 5% 7%;
 }
 
 .services-menu-link {
     display: block;
     text-decoration: none;
-    color: crimson;
+    color: dimgrey;
     text-transform: lowercase;
     font-size: small;
 }
 
 .services-menu-link:hover {
-    background-color: #DDC5C8;
-    text-decoration: underline;
+    text-shadow: linen 0.1em 0.1em 0.1em, linen -0.1em -0.1em 0.1em;
 }
 
 .header-menu-item:hover {
-    text-decoration: underline;
+    background-color: rgb(206, 169, 180);
+    border-radius: 5px 5px 0 0;
 }
 
 .services-menu:hover .services-menu-list {
@@ -114,6 +139,10 @@
     text-decoration: none;
     color: dimgrey;
     display: block;
+}
+
+.header-menu-link:hover {
+    text-shadow: linen 0.1em 0.1em 0.1em, linen -0.1em -0.1em 0.1em;
 }
 
 .content {
@@ -156,7 +185,7 @@
     text-transform: uppercase;
 }
 
-.online-enrollment {
+.online-registration {
     text-decoration: none;
     color: crimson;
     font-family: cursive;
@@ -191,6 +220,43 @@
     width: 100%;
 }
 
+.fixed-btn {
+    position: fixed;
+    top: 85%;
+    left: 20%;
+    background-color: #BCB3B8;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 0 0 10px rgba(145,80,112, 1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        -moz-box-shadow: 0 0 0 0 rgba(220,20,60, 1);
+        box-shadow: 0 0 0 0 rgba(220,20,60, 1);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 5px rgba(220,20,60, 0);
+        box-shadow: 0 0 0 10px rgba(220,20,60, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(220,20,60, 0);
+        box-shadow: 0 0 0 0 rgba(220,20,60, 0);
+    }
+}
+
+.fixed-btn-link {
+    display: block;
+    text-decoration: none;
+    color: crimson;
+    font-family: 'SEGOE PRINT';
+    font-weight: bold;
+    line-height: 1.4;
+}
+
 .footer {
     display: grid;
     grid-area: footer;
@@ -222,7 +288,7 @@
     color: grey;
 }
 
-  .icon-link-footer {
+.social-link-footer {
     text-decoration: none;
     padding: 0 1%;
     font-size: x-large;
