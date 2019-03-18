@@ -7,7 +7,14 @@
 .start-wrapper {
     display: grid;
     grid-template-areas: "header" "content" "discount" "contacts" "map-container" "footer";
-    grid-template-rows: auto 3fr auto auto auto 1fr;
+    grid-template-rows: auto 2fr auto auto 1fr auto;
+    grid-template-columns: 1fr;
+}
+
+.services-wrapper {
+    display: grid;
+    grid-template-areas: "header" "services-content" "discount" "footer";
+    grid-template-rows: auto 4fr 2fr 1fr;
 }
 
 .contacts-wrapper {
@@ -19,7 +26,7 @@
 .header {
     display: grid;
     grid-area: header;
-    grid-template-areas: "icons barbershop-name-description phone-number"
+    grid-template-areas: "icons barbershop-name-description phone"
                          "header-menu header-menu header-menu";
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr 1fr;
@@ -52,15 +59,24 @@
     color: dimgrey;
 }
 
-.description {
+.barbershop-description {
     font-size: small;
+}
+
+.phone {
+    grid-area: phone;
+    text-align: end;
+    padding-right: 5%;
+}
+
+.phone-icon {
+    color: dimgrey;
+    padding-right: 1%;
 }
 
 .phone-number {
     grid-area: phone-number;
     text-decoration: none;
-    text-align: end;
-    padding-right: 5%;
     color: dimgrey;
 }
 
@@ -72,7 +88,7 @@
 .header-menu-list {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(5, 10%);
+    grid-template-columns: repeat(4, 12%);
     grid-gap: 3%;
     justify-content: center;
     list-style: none;
@@ -167,7 +183,7 @@
 
 .discount-header {
     font-size: large;
-    color: crimson;
+    color: rgb(220, 62, 123);
 }
 
 .discount-content {
@@ -187,7 +203,7 @@
 
 .online-registration {
     text-decoration: none;
-    color: crimson;
+    color: rgb(220, 62, 123);
     font-family: cursive;
 }
 
@@ -208,7 +224,7 @@
 }
 
 .contacts-header {
-    color: crimson;
+    color: rgb(220, 62, 123);
 }
 
 .map-container {
@@ -223,8 +239,8 @@
 .fixed-btn {
     position: fixed;
     top: 85%;
-    left: 20%;
-    background-color: #BCB3B8;
+    left:5%;
+    background-color: rgb(206, 169, 180);
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -235,8 +251,8 @@
 
 @keyframes pulse {
     0% {
-        -moz-box-shadow: 0 0 0 0 rgba(220,20,60, 1);
-        box-shadow: 0 0 0 0 rgba(220,20,60, 1);
+        -moz-box-shadow: 0 0 0 0 rgb(220, 62, 123);
+        box-shadow: 0 0 0 0 rgb(220, 60, 132);
     }
     70% {
         -moz-box-shadow: 0 0 0 5px rgba(220,20,60, 0);
@@ -251,7 +267,7 @@
 .fixed-btn-link {
     display: block;
     text-decoration: none;
-    color: crimson;
+    color: dimgrey;
     font-family: 'SEGOE PRINT';
     font-weight: bold;
     line-height: 1.4;
@@ -297,7 +313,12 @@
 
 .footer-header {
     font-size: large;
-    color: crimson;
+    color: rgb(220, 62, 123);
+}
+
+.services-bottom-link {
+    text-decoration: none;
+    color: rgb(220, 62, 123);
 }
 
 .barbershop-address {
@@ -328,4 +349,277 @@
 
 .services-link:hover {
     text-decoration: underline;
+}
+
+.services-content {
+    display: grid;
+    grid-area: services-content;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    background-color: #DDC5C8;
+    padding: 3% 25%;
+}
+
+.services-price-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.services-list-header {
+    padding: 2% 0 0.5% 0;
+    font-weight: bold;
+}
+
+.services-list-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid dimgrey;
+    padding-top: 1%;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.nav-btn {
+    display: none;
+}
+
+@media screen and (max-device-width: 567px) {
+
+    .fixed-btn {
+        width: 170px;
+        height: 170px;
+        font-size: 35px;
+        background-color: rgba(206, 169, 180, 0.5);
+        top: 9%;
+        left: 80%;
+    }
+
+    .header {
+        display: grid;
+        grid-area: header;
+        grid-template-areas: "icons barbershop-name-description" "header-menu";
+        grid-template-rows: 3fr 1fr;
+        grid-template-columns: 1fr 3fr 1fr;
+        min-height: 250px;
+        justify-content: space-around;
+        padding-top: 3%;
+        padding-left: 1%;
+    }
+
+    .social {
+        grid-area: icons;
+    }
+
+    .social-link-header {
+        font-size: 60px;
+    }
+
+    .barbershop-name-description {
+        grid-area: barbershop-name-description;
+    }
+
+    .barbershop-description {
+        font-size: 24px;
+    }
+
+    .header-menu {
+        grid-area: header-menu;
+    }
+
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 2%;
+        left: 1%;
+        z-index: 1;
+        -webkit-user-select: none;
+        user-select: none;
+        width: 90%;
+    }
+
+    .header-menu-list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        padding-left: 2%;
+        width: 80%;
+        height: 900px;
+        margin: 0 0 0 -60px;
+        background-color: #FADADD;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    .header-menu-item {
+        padding: 5% 0;
+        transition-delay: 1s;
+        font-size: 40px;
+    }
+
+    .nav-btn {
+        display: flex;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+    }
+
+    .nav-btn-item {
+        display: flex;
+        width: 57px;
+        height: 4px;
+        margin-bottom: 13px;
+        position: relative;
+        background: grey;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 5px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+        opacity 0.55s ease;
+    }
+
+    .nav-btn-item:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    .nav-btn-item:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+
+    .nav-btn:checked ~ .nav-btn-item {
+        opacity: 1;
+        transform: rotate(45deg) translate(-3px, -1px);
+        background: grey;
+    }
+
+    .nav-btn:checked ~ .nav-btn-item:nth-last-child(3)
+    {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    .nav-btn:checked ~ .nav-btn-item:nth-last-child(2)
+    {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    .nav-btn:checked ~ .header-menu-list {
+        transform: none;
+    }
+
+    .barbershop-name {
+        font-size: 180px;
+    }
+
+    .phone-icon {
+        font-size: 50px;
+        position: absolute;
+        cursor: pointer;
+        top: 140px;
+        left: 15px;
+    }
+
+    .phone-number-header {
+        grid-area: phone;
+        display: none;
+    }
+
+    .content {
+        grid-area: content;
+        font-size: 40px;
+    }
+
+    .contacts {
+        grid-area: contacts;
+        font-size: 30px;
+    }
+
+    .map-container {
+        grid-area: map-container;
+    }
+
+    .footer {
+        display: grid;
+        grid-area: footer;
+        grid-template-areas: "services" "about-us" "barbershop-address" "first-footer";
+        text-align: center;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 1fr;
+        font-size: 35px;
+    }
+
+    .footer-header {
+        font-size: 40px;
+    }
+
+    .first-footer {
+        grid-area: first-footer;
+    }
+
+    .footer-main-header {
+        font-size: 50px;
+    }
+
+    .social-link-footer {
+        font-size: 45px;
+    }
+
+    .barbershop-address {
+        grid-area: barbershop-address;
+    }
+
+    .about-us {
+        grid-area: about-us;
+    }
+
+    .services {
+        grid-area: services;
+    }
+
+    .services-wrapper {
+        display: grid;
+        grid-template-rows: auto 2fr 1fr auto;
+        grid-template-columns: 1fr;
+        font-size: 40px;
+    }
+
+    .services-content {
+        padding: 3%;
+    }
+
+    .discount {
+        padding: 5%;
+    }
+
+    .discount-header {
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .discount-content {
+        font-size: 20px;
+    }
+
+    .discount-btn {
+        width: 60%;
+        min-height: 90px;
+    }
+
+    .online-registration {
+        font-size: 28px;
+    }
+
+    .contacts-wrapper {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+    }
 }
