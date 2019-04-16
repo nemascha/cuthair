@@ -6,15 +6,21 @@
 
 .start-wrapper {
     display: grid;
-    grid-template-areas: "header" "content" "discount" "contacts" "map-container" "footer";
-    grid-template-rows: auto 1fr auto auto auto auto;
+    grid-template-areas: "header" "content" "contacts" "map-container" "footer";
+    grid-template-rows: auto 1fr auto auto auto;
     grid-template-columns: 1fr;
 }
 
 .services-wrapper {
     display: grid;
-    grid-template-areas: "header" "services-content" "discount" "footer";
-    grid-template-rows: auto 4fr 2fr 1fr;
+    grid-template-areas: "header" "services-content" "footer";
+    grid-template-rows: auto 4fr 1fr;
+}
+
+.gallery-wrapper {
+    display: grid;
+    grid-template-areas: "header" "gallery-content" "contacts" "map-container" "footer";
+    grid-template-rows: auto 4fr auto auto auto;
 }
 
 .contacts-wrapper {
@@ -88,7 +94,7 @@
 .header-menu-list {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(4, 12%);
+    grid-template-columns: repeat(3, 18%);
     grid-gap: 3%;
     justify-content: center;
     list-style: none;
@@ -166,7 +172,8 @@
     min-height: 500px;
     position: relative;
     padding: 10%;
-    background-color: #DDC5C8;
+    background: linear-gradient(to top, #FADADD, #DDC5C8);
+
 }
 
 .discount {
@@ -237,6 +244,7 @@
 }
 
 .fixed-btn {
+    display: none;
     position: fixed;
     top: 85%;
     left:5%;
@@ -277,9 +285,9 @@
     display: grid;
     grid-area: footer;
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(4, 15%);
+    grid-template-columns: repeat(3, 20%);
     grid-gap: 5%;
-    justify-content: center;
+    justify-content: space-around;
     background-color: #DDC5C8;
     bottom: 0;
     width: 100%;
@@ -356,7 +364,7 @@
     grid-area: services-content;
     justify-content: center;
     grid-template-columns: 1fr;
-    background-color: #DDC5C8;
+    background: linear-gradient(to top, #FADADD, #DDC5C8);
     padding: 3% 25%;
 }
 
@@ -385,9 +393,36 @@
     display: none;
 }
 
+.gallery-content {
+    grid-area: gallery-content;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    background: linear-gradient(to top, #FADADD, #DDC5C8);
+    padding: 3% 25%;
+}
+
+.photo-gallery {
+    text-align: center;
+}
+
+.hairstyle-photo {
+    width: 70%;
+    margin-bottom: 2%;
+    box-shadow: 0 0 15px white;
+    border-radius: 15px;
+}
+
+.callback-form {
+    display: none;
+    width: 150px;
+    height: 150px;
+}
+
 @media screen and (max-device-width: 567px) {
 
     .fixed-btn {
+        display: none;
         width: 12vh;
         height: 12vh;
         font-size: 2.5vh;
@@ -552,9 +587,9 @@
     .footer {
         display: grid;
         grid-area: footer;
-        grid-template-areas: "services" "about-us" "barbershop-address" "first-footer";
+        grid-template-areas: "services" "barbershop-address" "first-footer";
         text-align: center;
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         grid-template-columns: 1fr;
         font-size: 35px;
     }
@@ -633,11 +668,13 @@
         font-size: 3.5vh;
     }
 
-
-
     .contacts-wrapper {
         display: grid;
         grid-template-rows: auto;
         grid-template-columns: 1fr;
+    }
+
+    .hairstyle-photo {
+        width: 100%;
     }
 }
