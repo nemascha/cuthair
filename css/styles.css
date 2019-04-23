@@ -172,7 +172,12 @@
 .content {
     grid-area: content;
     position: relative;
-    background-color: #DDC5C8;
+    background: url("../images/bg1.jpg") no-repeat center;
+    background-size: cover;
+    height: 90vh;
+    /*width: 100vw;*/
+
+    /*background-color: #DDC5C8;*/
     /*text-align: center;*/
     /*min-height: 500px;*/
 }
