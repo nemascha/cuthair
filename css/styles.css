@@ -621,10 +621,11 @@
     .content {
         grid-area: content;
         font-size: 3vh;
+        height: 70vh;
     }
 
     .slogan {
-        font-size: 2vh;
+        font-size: 3vh;
     }
 
     .contacts {
